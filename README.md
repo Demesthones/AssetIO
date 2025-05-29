@@ -10,9 +10,12 @@ Download the desired release and unzip the contents.
 Launch the executable. If this is the first time you are launching it will take a few moments to compile.
 
 ## Usage
-.5. The first time you launch the application (or if you delete the config file), you will be prompted to select a database path in settings.
-.5b. Click AssetIO > Settings, then select a folder using the file selector. This will be where the data is saved.
-.5c. Creating new databases is as simple as creating a new folder and selecting it in settings. This way multiple inventories can be updated.
+### First Time Setup
+1. The first time you launch the application (or if you delete the config file), you will be prompted to select a database path in settings.
+2. Click AssetIO > Settings, then select a folder using the file selector. This will be where the data is saved.
+3. Creating new databases is as simple as creating a new folder and selecting it in settings. This way multiple inventories can be updated.
+
+### Standard Usage
 1. The user that is updating the inventory will enter their name.
 2. They will enter (or scan) the desired identifier of the asset into the correct box - Devices In for receiving devices, Devices Out for devices leaving.
 3. Click Clear to clear the input boxes, or Submit to save the record.
