@@ -1,0 +1,23 @@
+﻿<Application x:Class="AssetIO.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:AssetIO"
+             xmlns:viewModel="clr-namespace:AssetIO.MVVM.ViewModel"
+             xmlns:view="clr-namespace:AssetIO.MVVM.View"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Theme/ButtonTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+                <view:HomeView/>
+            </DataTemplate>
+            <Style x:Key="WinAll" TargetType="{x:Type Window}">
+                <Setter Property="FontFamily"
+                    Value="/Fonts/SpaceGrotesk" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

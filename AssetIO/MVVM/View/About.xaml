@@ -1,0 +1,30 @@
+﻿<Window x:Class="AssetIO.MVVM.View.About"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AssetIO.MVVM.View"
+        mc:Ignorable="d"
+        Title="About" Height="120" Width="280">
+    <Grid>
+        <StackPanel Margin="4">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Author: " />
+                <TextBlock Text="{Binding Path=DataContext.Author}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Version: " />
+                <TextBlock Text="{Binding Path=DataContext.Version}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Repository: " />
+                <TextBlock>
+                    <Hyperlink NavigateUri="http://github.com/Demesthones">
+                        http://github.com/Demesthones
+                    </Hyperlink>
+                </TextBlock>
+            </StackPanel>
+        </StackPanel>
+        
+    </Grid>
+</Window>
