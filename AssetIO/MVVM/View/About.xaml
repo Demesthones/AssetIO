@@ -17,10 +17,10 @@
                 <TextBlock Text="{Binding Path=DataContext.Version}" />
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Repository: " />
+                <TextBlock Text="Repo: " />
                 <TextBlock>
-                    <Hyperlink NavigateUri="http://github.com/Demesthones">
-                        http://github.com/Demesthones
+                    <Hyperlink NavigateUri="http://github.com/Demesthones/AssetIO">
+                        http://github.com/Demesthones/AssetIO
                     </Hyperlink>
                 </TextBlock>
             </StackPanel>
