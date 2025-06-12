@@ -11,11 +11,11 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="552"/>
-            <RowDefinition Height="48"/>
+            <RowDefinition Height="528"/>
+            <RowDefinition Height="32"/>
         </Grid.RowDefinitions>
 
-        <ListView ItemsSource="{Binding AssetEntries}"
+        <ListView ItemsSource="{Binding View}"
               Padding="0"
               FontSize="14"
               Background="#F7F7F2"
@@ -98,12 +98,24 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <!-- <Label Grid.Row="1"
-           FontSize="14"
-           Content="{Binding SelectedDatabasePath}"
-           HorizontalAlignment="Left"
-           Margin="4"
-           Height="40" 
-           Width="652"/> -->
+        <StackPanel Grid.Row="1"
+                    Orientation="Horizontal"
+                    VerticalAlignment="Top"
+                    Height="36"
+                    >
+            <Label
+               FontSize="14"
+               Content="Search: "
+               HorizontalAlignment="Left"
+               Margin="4,0,4,0"
+               Height="32" 
+               Width="60"/>
+
+            <TextBox Name="tbSearch"
+                     Width="220"
+                     Height="24"
+                     Margin="0,2,0,4"
+                     Text="{Binding Search, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
     </Grid>
 </Window>

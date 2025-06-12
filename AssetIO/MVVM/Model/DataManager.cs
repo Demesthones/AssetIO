@@ -50,7 +50,7 @@ namespace AssetIO.MVVM.Model
                 while ((line = reader.ReadLine()) != null)
                 {
                     lineParse = line.Split(",");
-                    Debug.WriteLine(lineParse);
+                    //Debug.WriteLine(lineParse);
                     t = new AssetEntry(DateTime.Parse(lineParse[0]), lineParse[1], lineParse[2], (IO)Enum.Parse(typeof(IO), lineParse[3]));
                     _db.Add(t);
                 }

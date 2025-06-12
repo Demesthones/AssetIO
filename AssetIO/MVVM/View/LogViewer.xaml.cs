@@ -32,6 +32,7 @@ namespace AssetIO.MVVM.View
         double mainHeight = 600;
 
         private string _folder;
+        private string _search;
         public ObservableCollection<AssetEntry> AssetEntries { get; set; }
 
         public LogViewer(string Path)
@@ -45,7 +46,12 @@ namespace AssetIO.MVVM.View
 
 
             AssetEntries = DataManager.GetEntries(this.Folder);
+            this._view = new ListCollectionView(AssetEntries);
         }
+
+        private ListCollectionView _view;
+        public ICollectionView View { get { return _view; } }
+
 
         public string Folder
         {
@@ -59,6 +65,35 @@ namespace AssetIO.MVVM.View
                 OnPropertyChanged("Folder");
             }
         }
+        public string Search
+        {
+            get
+            {
+                return _search;
+            }
+            set
+            {
+                _search = value;
+                OnPropertyChanged("Search");
+                if (String.IsNullOrEmpty(value))
+                {
+                    View.Filter = null;
+                }
+                else
+                {
+                    View.Filter += new Predicate<object>(o => Filter(o as AssetEntry));
+                }
+                View.Refresh();
+            }
+        }
+        private bool Filter(AssetEntry entry)
+        {
+            //Debug.WriteLine("Filter: " + entry.ToString());
+            return Search == null
+                || entry.identifier.IndexOf(Search, StringComparison.OrdinalIgnoreCase) != -1;
+        }
+        
+
         public event PropertyChangedEventHandler? PropertyChanged;
 
         protected void OnPropertyChanged([CallerMemberName] string name = null)

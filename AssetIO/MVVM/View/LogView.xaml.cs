@@ -91,7 +91,7 @@ namespace AssetIO.MVVM.View
                 this.Folder = dialog.SelectedPath;
                 var AllFiles = Directory.EnumerateFiles(this.Folder, "*.aio", SearchOption.TopDirectoryOnly);
                 this.Output = String.Concat(FolderContains, AllFiles.Count().ToString());
-                Debug.WriteLine(this.Output);
+                //Debug.WriteLine(this.Output);
             }
             
         }

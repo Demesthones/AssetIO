@@ -33,7 +33,7 @@ namespace AssetIO.MVVM.Model
         public string ToString()
         {
             string e = String.Join(",", datetime.ToString().TrimEnd('\r','\n'), technician.TrimEnd('\r', '\n'), identifier.TrimEnd('\r', '\n'), direction);
-            Debug.WriteLine(e);
+            //Debug.WriteLine(e);
             return e;
         }
     }
